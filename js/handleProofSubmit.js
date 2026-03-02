@@ -30,7 +30,7 @@ async function handleProofSubmit() {
             my_file: base64File // This attaches the image/PDF
         };
 
-        await emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams);
+        await emailjs.send('YOUR_SERVICE_ID', 'template_bh6j7ug', templateParams);
 
         alert("Success! Your receipt has been sent to our team.");
         
