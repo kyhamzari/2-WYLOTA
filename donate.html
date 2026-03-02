@@ -277,7 +277,7 @@ https://templatemo.com/tm-581-kind-heart-charity
             Pay to Bank:  1308815727/Providus Bank/THE WAZOBIA YOUTH L..(Send your receipt to any of our contacts, Thank You.)
         </label>
     </div>
-<form id="donationForm">
+<form id="donate">
    <button type="submit" class="form-control mt-4">Submit Donation</button>
 </form>
                             </div>
@@ -394,6 +394,38 @@ https://templatemo.com/tm-581-kind-heart-charity
       emailjs.init("template_bh6j7ug"); // Replace with your actual Public Key
    })();
 </script>
+    <div class="modal fade" id="successModal" data-bs-backdrop="static" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header border-0 pb-0">
+        <h5 class="modal-title">Complete Your Donation</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center pt-0">
+        <div class="bg-light p-3 rounded mb-4 border mt-3">
+          <p class="mb-1 text-uppercase fw-bold small text-secondary">Providus Bank</p>
+          <h4 class="mb-1" id="accountNum">1308815727</h4>
+          <p class="mb-2 fw-bold text-dark small text-truncate">THE WAZOBIA YOUTH L...</p>
+          
+          <button type="button" class="btn btn-outline-primary btn-sm" onclick="copyAccountNumber()">
+            <i class="bi-content-copy me-1"></i> Copy Number
+          </button>
+          <span id="copyFeedback" class="d-block mt-2 small text-success" style="display:none !important;">Copied!</span>
+        </div>
+
+        <div class="text-start border-top pt-3">
+          <label class="form-label fw-bold small">Upload Receipt (Screenshot/PDF)</label>
+          <div class="input-group mb-3">
+            <input type="file" class="form-control" id="receiptUpload" accept="image/*,.pdf">
+          </div>
+          <button type="button" id="btnSubmitProof" class="btn btn-success w-100 py-2" onclick="handleProofSubmit()">
+            Submit Proof of Payment
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 
 </html>
