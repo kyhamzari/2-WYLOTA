@@ -1,0 +1,29 @@
+function handleProofSubmit() {
+    const fileInput = document.getElementById('receiptUpload');
+    const btn = document.getElementById('btnSubmitProof');
+
+    if (fileInput.files.length === 0) {
+        alert("Please select a file (screenshot or PDF) first.");
+        return;
+    }
+
+    // Change button state to show "Processing"
+    btn.disabled = true;
+    btn.innerHTML = '<span class="spinner-border spinner-border-sm"></span> Uploading...';
+
+    // Simulate an upload delay (Replace this with your actual backend upload logic)
+    setTimeout(() => {
+        alert("Thank you! Your proof of payment has been submitted for verification.");
+        
+        // Reset and close modal
+        btn.disabled = false;
+        btn.innerHTML = 'Submit Proof of Payment';
+        fileInput.value = ''; 
+        
+        var myModalEl = document.getElementById('successModal');
+        var modal = bootstrap.Modal.getInstance(myModalEl);
+        modal.hide();
+    }, 2000);
+}
+
+// Keep the previous copyAccountNumber function here too!
