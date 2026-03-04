@@ -280,7 +280,7 @@ https://templatemo.com/tm-581-kind-heart-charity
                                         </label>
                                     </div>
 
-                                    <button type="submit" class="form-control mt-4">Submit Donation</button>
+                                    <button type="button" onclick="redirectToPaystack()" class="form-control mt-4">Submit Donation</button>
                                 </div>
                             </div>
                         </form>
@@ -389,6 +389,22 @@ https://templatemo.com/tm-581-kind-heart-charity
     <script src="js/jquery.sticky.js"></script>
     <script src="js/counter.js"></script>
     <script src="js/custom.js"></script>
+    <script>
+function redirectToPaystack() {
+    // Replace the URL below with your actual Paystack payment page link
+    const paystackLink = "https://paystack.com/pay/YOUR_SLUG_HERE";
+    
+    // Validate if name and email are filled (since they are 'required')
+    const name = document.getElementById('donation-name').value;
+    const email = document.getElementById('donation-email').value;
+
+    if(name && email) {
+        window.location.href = paystackLink;
+    } else {
+        alert("Please fill in your name and email before proceeding.");
+    }
+}
+</script>
 
 </body>
 
